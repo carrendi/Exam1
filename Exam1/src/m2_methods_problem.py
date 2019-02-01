@@ -58,7 +58,7 @@ def is_prime(n):
 
 def test_count_primes():
     ###############################################################################
-    # TODO: 2  READ the doc-string for the count_primes function below,
+    # DONE: 2  READ the doc-string for the count_primes function below,
     #   but DO NOT begin coding.
     # After you have READ this, change its _TODO_ to DONE.
     ###############################################################################
@@ -68,16 +68,42 @@ def test_count_primes():
     print('Expected count = 2')
     print('Actual count = ', count_primes(1, 3))
 
+
     ###############################################################################
-    #   TODO: 3. Add the additional test cases for this function below
+    #   DONE: 3. Add the additional test cases for this function below
     # After you have coded this, change its _TODO_ to DONE.
     ###############################################################################
-    print()
-    print('Your tests will go here!')
+    #Test 2
+    print('#######################################')
+    print('Test 2 of count primes')
+    print('m = 20 and n = 22')
+    print('Expected count = nonw')
+    print('Actual count = ', count_primes(20, 22))
+
+    #Test3
+    print('#######################################')
+    print('Test 3 of count primes')
+    print('m = 2 and n = 8')
+    print('Expected count = 2,3,5,7')
+    print('Actual count = ', count_primes(2, 8))
+
+    #Test4
+    print('#######################################')
+    print('Test 4 of count primes')
+    print('m = 6 and n = 9')
+    print('Expected count = 2')
+    print('Actual count = ', count_primes(6, 9))
+
     return
 
 
 def count_primes(m,n):
+    total = 0
+    for k in range(n - m + 1):
+        if n > m:
+            total = (total + ((k+1)//2))
+    return total
+
     """
     #    What comes in:
     #      -- A positive integer m.
@@ -148,6 +174,11 @@ def test_multiply_primes():
 
 
 def multiply_primes(m,n):
+    total = 0
+    for k in range(n,m):
+        if n > m :
+            total = total + ((n//2) * k)
+        return total
     """
        #    What comes in:
        #      -- A positive integer m.
